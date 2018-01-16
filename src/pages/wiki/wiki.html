@@ -5,6 +5,54 @@
       </ion-header>
       
       <ion-content padding>
-        <h2>Bienvenue sur le Wiki</h2>
+      	<h2>Star Wars knowledge, you shall get</h2>
+
+		<div padding>
+		<ion-segment [(ngModel)]="pet">
+		<ion-segment-button value="people">
+		Characters
+		</ion-segment-button>
+		<ion-segment-button value="planet">
+		Planets
+		</ion-segment-button>
+		<ion-segment-button value="species">
+		Species
+		</ion-segment-button>
+		<ion-segment-button value="vehicles">
+		Vehicles
+		</ion-segment-button>
+		<ion-segment-button value="spaceships">
+		Spaceships
+		</ion-segment-button>
+		<ion-segment-button value="films">
+		Films
+		</ion-segment-button>
+		</ion-segment>
+		</div>
+
+		<div [ngSwitch]="pet">
+		<ion-list *ngSwitchCase="'people'">
+		<ion-item>
+		<h2>Ruby</h2>
+		</ion-item>
+		</ion-list>
+
+		<ion-list *ngSwitchCase="'planet'">
+		<ion-item>
+		<h2>Luna</h2>
+		</ion-item>
+		</ion-list>
+
+		<ion-list *ngSwitchCase="'species'">
+		<ion-item>
+		<h2>Ruby</h2>
+		</ion-item>
+		</ion-list>
+		</div>
       </ion-content>
       
+
+
+
+      
+
