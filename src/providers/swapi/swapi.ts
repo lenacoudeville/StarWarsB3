@@ -23,10 +23,9 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  detailsFilm(film){
-    let request = `${this.endPoint}/films/${film}`;
-    return this.http.get(request)
-      .map((res : any) => res.results);
+  getFilm(idFilm){
+    let request = `${this.endPoint}/films/${idFilm}/`;
+    return this.http.get(request);
   }
 
   listCharacters() {
@@ -35,7 +34,7 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  detailsCharacter(character){
+  getCharacter(character){
     let request = `${this.endPoint}/people/${character}`;
     return this.http.get(request)
       .map((res : any) => res.results);
@@ -47,7 +46,7 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  detailsPlanet(planet){
+  getPlanet(planet){
     let request = `${this.endPoint}/planet/${planet}`;
     return this.http.get(request)
       .map((res : any) => res.results);
@@ -59,7 +58,7 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  detailsSpecie(specie){
+  getSpecie(specie){
     let request = `${this.endPoint}/specie/${specie}`;
     return this.http.get(request)
       .map((res : any) => res.results);
@@ -71,7 +70,7 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  detailsStarship(starship){
+  getStarship(starship){
     let request = `${this.endPoint}/starships/${starship}`;
     return this.http.get(request)
       .map((res : any) => res.results);
@@ -83,7 +82,7 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  detailsVehicle(vehicle){
+  getVehicle(vehicle){
     let request = `${this.endPoint}/vehicles/${vehicle}`;
     return this.http.get(request)
       .map((res : any) => res.results);

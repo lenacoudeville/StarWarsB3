@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailsFilmPage } from '../pages/details-film/details-film'
 import { FilmsPage } from '../pages/films/films'
+import { DetailsFilmModule } from '../pages/details-film/details-film.module'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

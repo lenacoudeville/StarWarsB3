@@ -9,15 +9,17 @@ import { SwapiProvider } from '../../providers/swapi/swapi';
 })
 export class DetailsFilmPage {
 
-	films = [];
+  film;
+  idFilm;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
+    this.idFilm = navParams.get('idFilm');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsFilm');
-    this.swapiProvider.listFilms().subscribe(data => {
-    this.films = data;
+    this.swapiProvider.getFilm(this.idFilm).subscribe(data => {
+      this.film = data;
     });
   }
 }

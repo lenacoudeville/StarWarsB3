@@ -9,7 +9,7 @@
         
         <ion-content padding>
             <ion-list>
-                <button ion-item *ngFor="let film of films" (click)="filmDetails(film)">
+                <button ion-item *ngFor="let film of films" (click)="filmSelected(film)">
                   {{ film.title }}
                 </button>  
               </ion-list>
