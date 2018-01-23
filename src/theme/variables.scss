@@ -38,7 +38,9 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  tab-textcolor: #ECC760, 
+  textcolor: #ffe6a3
 );
 
 
@@ -71,8 +73,34 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
+
+$text-color : #ffe6a3;
+
+$link-color: #ecc760;
+$subdued-text-color: #ffe6a3;
+
+$toolbar-md-title-text-color: #ffe6a3;
+$toolbar-ios-title-text-color: #ffe6a3;
+$toolbar-wp-title-text-color: #ffe6a3;
+$toolbar-background: #111111;
+$toolbar-text-color: #ecc760;
+$toolbar-active-color: #ecc760;
+$toolbar-inactive-color: #afafaf;
+
+
+
 $tabs-background : #111111;
-$text-color : #ECC760;
+$tabs-tab-color: #ecc760;
+$tabs-md-tab-icon-color: #afafaf;
+$tabs-ios-tab-icon-color: #afafaf;
+$tabs-md-tab-icon-color-active: #ecc760;
+$tabs-ios-tab-icon-color-active: #ecc760;
+$tabs-md-tab-text-color: #afafaf;
+$tabs-ios-tab-text-color: #afafaf;
+$tabs-md-tab-text-color-active: #ecc760;
+$tabs-ios-tab-text-color-active: #ecc760;
+
+
 
 // Ionicons
 // --------------------------------------------------
