@@ -10,14 +10,12 @@ import { QuizzPage } from '../pages/quizz/quizz';
 import { WikiPageModule } from '../pages/wiki/wiki.module';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { DetailsFilm } from '../pages/details-film/details-film'
+import { DetailsFilmPage } from '../pages/details-film/details-film'
 import { FilmsPage } from '../pages/films/films'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SwapiProvider } from '../providers/swapi/swapi';
-import { DetailsfilmModule } from '../pages/details-film/details-film.module';
-import { FilmsPageModule } from '../pages/films/films.module'
 
 @NgModule({
   declarations: [
@@ -26,7 +24,7 @@ import { FilmsPageModule } from '../pages/films/films.module'
     HomePage,
     TabsPage,
     QuizzPage,
-    DetailsFilm,
+    DetailsFilmPage,
     FilmsPage
   ],
   imports: [
@@ -34,9 +32,7 @@ import { FilmsPageModule } from '../pages/films/films.module'
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     WikiPageModule,
-    IonicStorageModule,
-    DetailsfilmModule,
-    FilmsPageModule
+    IonicStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +41,7 @@ import { FilmsPageModule } from '../pages/films/films.module'
     HomePage,
     TabsPage,
     QuizzPage,
-    DetailsFilm,
+    DetailsFilmPage,
     FilmsPage
   ],
   providers: [
