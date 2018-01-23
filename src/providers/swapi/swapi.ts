@@ -20,6 +20,7 @@ export class SwapiProvider {
   listFilms() {
     let request = `${this.endPoint}/films/`;
     return this.http.get(request)
+<<<<<<< HEAD
       .map((res : any) => res.results);
   }
 
@@ -87,6 +88,9 @@ export class SwapiProvider {
     let request = `${this.endPoint}/vehicles/${vehicle}`;
     return this.http.get(request)
       .map((res : any) => res.results);
+=======
+      .map((res: any) => res.results);
+>>>>>>> 766febe93f093a72ff4e2792b4bcade355babd06
   }
 
 }
