@@ -1,0 +1,17 @@
+<ion-header>
+        
+          <ion-navbar>
+            <ion-title>Wiki</ion-title>
+          </ion-navbar>
+        
+        </ion-header>
+        
+        
+        <ion-content padding>
+            <ion-list>
+                <button ion-item *ngFor="let film of films" (click)="filmDetails(film)">
+                  {{ film.title }}
+                </button>  
+              </ion-list>
+        
+        </ion-content>

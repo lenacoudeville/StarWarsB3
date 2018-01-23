@@ -11,12 +11,12 @@ import { SwapiProvider } from '../../providers/swapi/swapi';
 
 @IonicPage()
 @Component({
-  selector: 'page-wiki',
-  templateUrl: 'wiki.html',
+  selector: 'page-films',
+  templateUrl: 'films.html',
 })
-export class WikiPage {
+export class FilmsPage {
 
-	wiki = [];
+	films = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
   }
@@ -24,13 +24,7 @@ export class WikiPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad WikiPage');
     this.swapiProvider.listFilms().subscribe(data => {
-    this.wiki = data;
-    });
-   }
-
-   filmDetails(film){
-    this.swapiProvider.detailsFilm(film).subscribe(data => {
-    this.wiki = data;
+    this.films = data;
     });
    }
 }

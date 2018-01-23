@@ -3,16 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
 import { QuizzPage } from '../pages/quizz/quizz';
 import { WikiPageModule } from '../pages/wiki/wiki.module';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DetailsFilm } from '../pages/details-film/details-film'
+import { FilmsPage } from '../pages/films/films'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SwapiProvider } from '../providers/swapi/swapi';
+import { DetailsfilmModule } from '../pages/details-film/details-film.module';
+import { FilmsPageModule } from '../pages/films/films.module'
 
 @NgModule({
   declarations: [
@@ -21,12 +26,17 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     HomePage,
     TabsPage,
     QuizzPage,
+    DetailsFilm,
+    FilmsPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     WikiPageModule,
+    IonicStorageModule,
+    DetailsfilmModule,
+    FilmsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,6 +45,8 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     HomePage,
     TabsPage,
     QuizzPage,
+    DetailsFilm,
+    FilmsPage
   ],
   providers: [
     StatusBar,
