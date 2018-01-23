@@ -1,7 +1,7 @@
 <ion-header>
         
           <ion-navbar>
-            <ion-title>Movie List</ion-title>
+            <ion-title>Characters List</ion-title>
           </ion-navbar>
         
         </ion-header>
@@ -9,8 +9,8 @@
         
         <ion-content padding>
             <ion-list>
-                <button ion-item *ngFor="let film of films" (click)="filmSelected(film)">
-                  {{ film.title }}
+                <button ion-item *ngFor="let character of characters" (click)="characterSelected(character)">
+                  {{ character.name }}
                 </button>  
               </ion-list>
         

@@ -12,10 +12,13 @@
             <ion-item>Director : {{film?.director}}</ion-item>
             <ion-item>Producers : {{film?.producer}}</ion-item>
             <ion-item>Realease Date : {{film?.release_date}}</ion-item>
-        </ion-list>
+            <ion-item>Opening crawl : {{film?.opening_crawl}}</ion-item>
+          </ion-list>
 
         <ion-list title="Related Characters">
-                
+            <button ion-item *ngFor="let char of film?.characters">
+                {{ char }}
+            </button>
         </ion-list>
     </ion-content>
     

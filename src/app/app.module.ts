@@ -13,6 +13,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { DetailsFilmPage } from '../pages/details-film/details-film'
 import { FilmsPage } from '../pages/films/films'
 import { DetailsFilmModule } from '../pages/details-film/details-film.module'
+import { DetailsCharacterPage } from '../pages/details-character/details-character'
+import { CharactersPage } from '../pages/characters/characters'
+import { DetailsCharacterModule } from '../pages/details-character/details-character.module'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +29,9 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     TabsPage,
     QuizzPage,
     DetailsFilmPage,
-    FilmsPage
+    FilmsPage,
+    DetailsCharacterPage,
+    CharactersPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,9 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     TabsPage,
     QuizzPage,
     DetailsFilmPage,
-    FilmsPage
+    FilmsPage,
+    DetailsCharacterPage,
+    CharactersPage
   ],
   providers: [
     StatusBar,

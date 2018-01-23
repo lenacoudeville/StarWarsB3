@@ -16,7 +16,7 @@ import { SwapiProvider } from '../../providers/swapi/swapi';
 })
 export class WikiPage {
 
-	wiki = [];
+	wiki;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
   }
@@ -29,7 +29,7 @@ export class WikiPage {
    }
 
    filmDetails(film){
-    this.swapiProvider.detailsFilm(film).subscribe(data => {
+    this.swapiProvider.getFilm(film).subscribe(data => {
     this.wiki = data;
     });
    }

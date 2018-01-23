@@ -5,6 +5,7 @@ import { HomePage } from '../home/home';
 import { QuizzPage } from '../quizz/quizz';
 import { WikiPage } from '../wiki/wiki';
 import { FilmsPage } from '../films/films';
+import { CharactersPage } from '../characters/characters';
 
 @Component({
   templateUrl: 'tabs.html'
