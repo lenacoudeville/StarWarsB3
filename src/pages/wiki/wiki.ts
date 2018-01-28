@@ -4,6 +4,14 @@ import { SwapiProvider } from '../../providers/swapi/swapi';
 import { FilmsPage } from  '../films/films'
 import { CharactersPage } from '../characters/characters';
 
+import { SpeciesPage } from '../species/species';
+
+import { StarshipsPage } from '../starships/starships';
+
+import { PlanetsPage } from '../planets/planets';
+
+import { VehiclesPage } from '../vehicles/vehicles';
+
 @IonicPage()
 @Component({
   selector: 'page-wiki',
@@ -32,18 +40,18 @@ export class WikiPage {
   }
 
   planetsList() {
-    this.navCtrl.push(CharactersPage);
+    this.navCtrl.push(PlanetsPage);
   }
 
   speciesList() {
-    this.navCtrl.push(CharactersPage);
+    this.navCtrl.push(SpeciesPage);
   }
 
   starshipsList() {
-    this.navCtrl.push(CharactersPage);
+    this.navCtrl.push(StarshipsPage);
   }
 
   vehiclesList() {
-    this.navCtrl.push(CharactersPage);
+    this.navCtrl.push(VehiclesPage);
   }
 }

@@ -1,0 +1,17 @@
+<ion-header>
+        
+          <ion-navbar>
+            <ion-title>Species List</ion-title>
+          </ion-navbar>
+        
+        </ion-header>
+        
+        
+        <ion-content padding>
+            <ion-list>
+                <button ion-item *ngFor="let specie of species" (click)="specieSelected(specie)">
+                  {{ specie.name }}
+                </button>  
+              </ion-list>
+        
+        </ion-content>

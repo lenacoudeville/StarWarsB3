@@ -35,9 +35,8 @@ export class SwapiProvider {
   }
 
   getCharacter(character){
-    let request = `${this.endPoint}/people/${character}`;
-    return this.http.get(request)
-      .map((res : any) => res.results);
+    let request = `${this.endPoint}/people/${character}/`;
+    return this.http.get(request);
   }
 
   listPlanets() {
@@ -47,9 +46,8 @@ export class SwapiProvider {
   }
 
   getPlanet(planet){
-    let request = `${this.endPoint}/planet/${planet}`;
-    return this.http.get(request)
-      .map((res : any) => res.results);
+    let request = `${this.endPoint}/planets/${planet}/`;
+    return this.http.get(request);
   }
 
   listSpecies() {
@@ -59,9 +57,8 @@ export class SwapiProvider {
   }
 
   getSpecie(specie){
-    let request = `${this.endPoint}/specie/${specie}`;
-    return this.http.get(request)
-      .map((res : any) => res.results);
+    let request = `${this.endPoint}/species/${specie}/`;
+    return this.http.get(request);
   }
 
   listStarships() {
@@ -71,9 +68,8 @@ export class SwapiProvider {
   }
 
   getStarship(starship){
-    let request = `${this.endPoint}/starships/${starship}`;
-    return this.http.get(request)
-      .map((res : any) => res.results);
+    let request = `${this.endPoint}/starships/${starship}/`;
+    return this.http.get(request);
   }
 
   listVehicles() {
@@ -83,9 +79,8 @@ export class SwapiProvider {
   }
 
   getVehicle(vehicle){
-    let request = `${this.endPoint}/vehicles/${vehicle}`;
-    return this.http.get(request)
-      .map((res : any) => res.results);
+    let request = `${this.endPoint}/vehicles/${vehicle}/`;
+    return this.http.get(request);
   }
 
 }

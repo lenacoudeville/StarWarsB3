@@ -1,0 +1,17 @@
+<ion-header>
+        
+          <ion-navbar>
+            <ion-title>Starships List</ion-title>
+          </ion-navbar>
+        
+        </ion-header>
+        
+        
+        <ion-content padding>
+            <ion-list>
+                <button ion-item *ngFor="let starship of starships" (click)="starshipSelected(starship)">
+                  {{ starship.name }}
+                </button>  
+              </ion-list>
+        
+        </ion-content>

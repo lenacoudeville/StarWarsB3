@@ -20,6 +20,14 @@ export class DetailsFilmPage {
     console.log('ionViewDidLoad DetailsFilm');
     this.swapiProvider.getFilm(this.idFilm).subscribe(data => {
       this.film = data;
+    });    
+    /*
+    this.film.characters.forEach(element => {
+      const idPeople = element.slice('https://swapi.co/api/people/'.length, -1);
+      this.film.nameList = this.swapiProvider.getCharacter(idPeople);
+      console.log(this.film.nameList);
     });
+    */
+    
   }
 }

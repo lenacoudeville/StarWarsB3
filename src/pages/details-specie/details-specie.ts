@@ -4,22 +4,23 @@ import { SwapiProvider } from '../../providers/swapi/swapi';
 
 @IonicPage()
 @Component({
-  selector: 'page-details-character',
-  templateUrl: 'details-character.html',
+  selector: 'page-details-specie',
+  templateUrl: 'details-specie.html',
 })
-export class DetailsCharacterPage {
+export class DetailsSpeciePage {
 
-  character;
-  idCharacter;
+  specie;
+  idSpecie;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
-    this.idCharacter = navParams.get('idCharacter');
+    this.idSpecie = navParams.get('idSpecie');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsCharacter');
-    this.swapiProvider.getCharacter(this.idCharacter).subscribe(data => {
-      this.character = data;
+    console.log('ionViewDidLoad DetailsSpecie');
+    this.swapiProvider.getSpecie(this.idSpecie).subscribe(data => {
+      this.specie = data;
     });
+    
   }
 }

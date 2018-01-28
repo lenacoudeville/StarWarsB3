@@ -22,9 +22,9 @@ export class CharactersPage {
     });
    }
 
-   filmSelected(film) {
+   characterSelected(film) {
     
-    const idCharacter = film.url.slice('https://swapi.co/api/films/'.length, -1);
+    const idCharacter = film.url.slice('https://swapi.co/api/people/'.length, -1);
     this.navCtrl.push(DetailsCharacterPage, { idCharacter: idCharacter});
   }
 }
