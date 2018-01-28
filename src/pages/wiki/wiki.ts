@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SwapiProvider } from '../../providers/swapi/swapi';
-
-/**
- * Generated class for the WikiPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FilmsPage } from  '../films/films'
+import { CharactersPage } from '../characters/characters';
 
 @IonicPage()
 @Component({
@@ -23,14 +18,32 @@ export class WikiPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WikiPage');
-    this.swapiProvider.listFilms().subscribe(data => {
-    this.wiki = data;
-    });
+    //this.swapiProvider.listFilms().subscribe(data => {
+    //this.wiki = data;
+    //});
    }
 
-   filmDetails(film){
-    this.swapiProvider.getFilm(film).subscribe(data => {
-    this.wiki = data;
-    });
-   }
+  filmsList() {
+    this.navCtrl.push(FilmsPage);
+  }
+
+  charactersList() {
+    this.navCtrl.push(CharactersPage);
+  }
+
+  planetsList() {
+    this.navCtrl.push(CharactersPage);
+  }
+
+  speciesList() {
+    this.navCtrl.push(CharactersPage);
+  }
+
+  starshipsList() {
+    this.navCtrl.push(CharactersPage);
+  }
+
+  vehiclesList() {
+    this.navCtrl.push(CharactersPage);
+  }
 }

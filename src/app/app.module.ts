@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
-import { QuizzPage } from '../pages/quizz/quizz';
 import { WikiPageModule } from '../pages/wiki/wiki.module';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -27,7 +26,6 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     AboutPage,
     HomePage,
     TabsPage,
-    QuizzPage,
     DetailsFilmPage,
     FilmsPage,
     DetailsCharacterPage,
@@ -46,7 +44,6 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     AboutPage,
     HomePage,
     TabsPage,
-    QuizzPage,
     DetailsFilmPage,
     FilmsPage,
     DetailsCharacterPage,
