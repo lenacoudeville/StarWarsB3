@@ -10,16 +10,14 @@ import { DetailsFilmPage } from  '../details-film/details-film'
 })
 export class FilmsPage {
 
-	films = [];
+	films:any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilmPage');
-    this.swapiProvider.listFilms().subscribe(data => {
-    this.films = data;
-    });
+    this.films = this.swapiProvider.listFilms()
    }
 
    filmSelected(film) {    

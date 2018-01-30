@@ -24,28 +24,29 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
-  
-  listFilmsNew() {
-    this.storage.get(`films/`).then((dataCached) => {
-      if (dataCached) {
-        console.log("if");
-        console.log('CACHE', JSON.parse(dataCached))
-        return JSON.parse(dataCached);        
-      } else {
-        console.log("else")
-        let request = `${this.endPoint}/films/`;        
-        var data = this.http.get(request).map((res : any) => res.results);
-        this.storage.set(`films/`, JSON.stringify(data))
-        console.log("fin")
-        return data;
-      }
-    })
-  } 
-
   getFilm(idFilm){
-              let request = `${this.endPoint}/films/${idFilm}/`;
-        return this.http.get(request);
+    let request = `${this.endPoint}/films/${idFilm}/`;
+    return this.http.get(request);
   }
+
+  getFilmNew(idFilm){
+    this.storage.get(`films/${idFilm}`).then((dataCached) => {
+      if (dataCached) {
+        console.log('CACHE', JSON.parse(dataCached));
+        return JSON.parse(dataCached);
+      } else {
+        let request = `${this.endPoint}/films/${idFilm}/`;
+        this.http.get(request).subscribe(data => {
+          console.log('API', data);
+          this.storage.set(`films/${idFilm}`, JSON.stringify(data));
+          return data;
+        });
+       
+      }
+    });
+        
+  }
+    
 
   listCharacters() {
     let request = `${this.endPoint}/people/`;
