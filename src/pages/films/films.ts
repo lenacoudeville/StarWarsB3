@@ -22,8 +22,7 @@ export class FilmsPage {
     });
    }
 
-   filmSelected(film) {
-    
+   filmSelected(film) {    
     const idFilm = film.url.slice('https://swapi.co/api/films/'.length, -1);
     this.navCtrl.push(DetailsFilmPage, { idFilm: idFilm});
   }

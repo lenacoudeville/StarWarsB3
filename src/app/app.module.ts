@@ -62,6 +62,9 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot({
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }),
     WikiPageModule,
     IonicStorageModule
   ],

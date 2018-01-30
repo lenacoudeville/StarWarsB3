@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
 
 /*
@@ -13,7 +14,7 @@ export class SwapiProvider {
 
  endPoint='https://swapi.co/api';
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private storage: Storage) {
     console.log('Hello SwapiProvider Provider');
   }
 
@@ -23,9 +24,27 @@ export class SwapiProvider {
       .map((res : any) => res.results);
   }
 
+  
+  listFilmsNew() {
+    this.storage.get(`films/`).then((dataCached) => {
+      if (dataCached) {
+        console.log("if");
+        console.log('CACHE', JSON.parse(dataCached))
+        return JSON.parse(dataCached);        
+      } else {
+        console.log("else")
+        let request = `${this.endPoint}/films/`;        
+        var data = this.http.get(request).map((res : any) => res.results);
+        this.storage.set(`films/`, JSON.stringify(data))
+        console.log("fin")
+        return data;
+      }
+    })
+  } 
+
   getFilm(idFilm){
-    let request = `${this.endPoint}/films/${idFilm}/`;
-    return this.http.get(request);
+              let request = `${this.endPoint}/films/${idFilm}/`;
+        return this.http.get(request);
   }
 
   listCharacters() {
@@ -82,5 +101,12 @@ export class SwapiProvider {
     let request = `${this.endPoint}/vehicles/${vehicle}/`;
     return this.http.get(request);
   }
+
+  getElementName(type, idElement){
+    let request = `${this.endPoint}/${type}/${idElement}/`;
+    return this.http.get(request);
+  }
+
+  
 
 }

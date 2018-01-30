@@ -15,9 +15,38 @@
             <ion-item>Opening crawl : {{film?.opening_crawl}}</ion-item>
           </ion-list>
 
-        <ion-list title="Related Characters">
-            <button ion-item *ngFor="let char of film?.nameList">
-                {{ char?.name }}
+        <h4>Related Characters</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let people of listPeoplesName" (click)=characterSelected(people?.id)>
+               {{ people?.name }} 
+            </button>
+        </ion-list>
+
+        <h4>Related Planets</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let planet of listPlanetsName" (click)=planetSelected(planet?.id)>
+                {{ planet?.name }}
+            </button>
+        </ion-list>
+
+        <h4>Related Starships</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let starship of listStarshipsName" (click)=starshipSelected(starship?.id)>
+                {{ starship?.name }}
+            </button>
+        </ion-list>
+
+        <h4>Related Vehicles</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let vehicle of listVehiclesName" (click)=vehicleSelected(vehicle?.id)>
+                {{ vehicle?.name }}
+            </button>
+        </ion-list>
+
+        <h4>Related Species</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let species of listSpeciesName" (click)=specieSelected(species?.id)>
+                {{ species?.name }}
             </button>
         </ion-list>
     </ion-content>

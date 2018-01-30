@@ -16,5 +16,36 @@
                 <ion-item>Eye color : {{character?.eye_color}}</ion-item>
                 <ion-item>Birht year : {{character?.birth_year}}</ion-item>
                 <ion-item>Gender : {{character?.gender}}</ion-item>
+                <button ion-item (click)=planetSelected(planet?.id)>
+                    HomeWorld : {{ planet?.name }}
+                </button>
+              </ion-list>
+
+              <h4>Related Films</h4>
+              <ion-list>            
+                  <button ion-item *ngFor="let film of listFilmsName" (click)=filmSelected(film?.id)>
+                     {{ film?.name }} 
+                  </button>
+              </ion-list>
+      
+              <h4>Related Starships</h4>
+              <ion-list>            
+                  <button ion-item *ngFor="let starship of listStarshipsName" (click)=starshipSelected(starship?.id)>
+                      {{ starship?.name }}
+                  </button>
+              </ion-list>
+      
+              <h4>Related Vehicles</h4>
+              <ion-list>            
+                  <button ion-item *ngFor="let vehicle of listVehiclesName" (click)=vehicleSelected(vehicle?.id)>
+                      {{ vehicle?.name }}
+                  </button>
+              </ion-list>
+      
+              <h4>Related Species</h4>
+              <ion-list>            
+                  <button ion-item *ngFor="let species of listSpeciesName" (click)=specieSelected(species?.id)>
+                      {{ species?.name }}
+                  </button>
               </ion-list>
             </ion-content>
