@@ -19,6 +19,7 @@ export class DetailsFilmPage {
 
   film;
   idFilm;
+  
   listPeoplesName:any = [];
   listPlanetsName:any = [];
   listStarshipsName:any = [];
@@ -33,19 +34,17 @@ export class DetailsFilmPage {
     console.log('ionViewDidLoad DetailsFilm');
     this.swapiProvider.getFilm(this.idFilm).subscribe(data => {
       this.film = data;
+
+      function MonObjet(id, name){
+        this.id = id
+        this.name = name;
+     }
       
-      console.log("film : " ,data)
-
-      var monObjet: any = {};
-
       /*  GetCharacterNames  */
       for (var index = 0; index < this.film.characters.length; index++) {
         const idPeople = this.film.characters[index].slice('https://swapi.co/api/people/'.length, -1);
-        this.swapiProvider.getElementName("people", idPeople).subscribe(data => {
-          monObjet.id = idPeople;
-          monObjet.name = data['name']
-          this.listPeoplesName[index] = monObjet;
-          console.log(this.listPeoplesName[index].id,  this.listPeoplesName[index].name)
+        this.swapiProvider.getElementName("people", idPeople).subscribe(data => {         
+          this.listPeoplesName.push(new MonObjet(idPeople, data['name']));
         });
       }
       /* End */
@@ -54,10 +53,7 @@ export class DetailsFilmPage {
       for (var index = 0; index < this.film.planets.length; index++) {
         const idPlanet = this.film.planets[index].slice('https://swapi.co/api/planets/'.length, -1);
         this.swapiProvider.getElementName("planets", idPlanet).subscribe(data => {
-          monObjet.id = idPlanet;
-          monObjet.name = data['name']
-          this.listPlanetsName[index] = monObjet;
-          console.log(this.listPlanetsName[index].id,  this.listPlanetsName[index].name)
+          this.listPlanetsName.push(new MonObjet(idPlanet, data['name']));
         });
       }
       /* End */
@@ -66,10 +62,7 @@ export class DetailsFilmPage {
       for (var index = 0; index < this.film.starships.length; index++) {
         const idStarship = this.film.starships[index].slice('https://swapi.co/api/starships/'.length, -1);
         this.swapiProvider.getElementName("starships", idStarship).subscribe(data => {
-          monObjet.id = idStarship;
-          monObjet.name = data['name']
-          this.listStarshipsName[index] = monObjet;
-          console.log(this.listStarshipsName[index].id,  this.listStarshipsName[index].name)
+          this.listStarshipsName.push(new MonObjet(idStarship, data['name']));
         });
       }
       /* End */
@@ -78,10 +71,7 @@ export class DetailsFilmPage {
       for (var index = 0; index < this.film.vehicles.length; index++) {
         const idVehicle = this.film.vehicles[index].slice('https://swapi.co/api/vehicles/'.length, -1);
         this.swapiProvider.getElementName("vehicles", idVehicle).subscribe(data => {
-          monObjet.id = idVehicle;
-          monObjet.name = data['name']
-          this.listVehiclesName[index] = monObjet;
-          console.log(this.listVehiclesName[index].id,  this.listVehiclesName[index].name)
+          this.listVehiclesName.push(new MonObjet(idVehicle, data['name']));
         });
       }
       /* End */
@@ -90,22 +80,10 @@ export class DetailsFilmPage {
       for (var index = 0; index < this.film.species.length; index++) {
         const idSpecies = this.film.species[index].slice('https://swapi.co/api/species/'.length, -1);
         this.swapiProvider.getElementName("species", idSpecies).subscribe(data => {
-          monObjet.id = idSpecies;
-          monObjet.name = data['name']
-          this.listSpeciesName[index] = monObjet;
-          console.log(this.listSpeciesName[index].id,  this.listSpeciesName[index].name)
+          this.listSpeciesName.push(new MonObjet(idSpecies, data['name']));
         });
       }
       /* End */
-
-
-
-      /* console logs */
-
-      console.log("species : ", this.listSpeciesName);
-      console.log("planet : ", this.listPlanetsName);
-      console.log("vehicle : ", this.listVehiclesName);
-      console.log("starships : ", this.listStarshipsName);
 
     });    
 

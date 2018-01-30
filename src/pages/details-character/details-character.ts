@@ -20,11 +20,11 @@ export class DetailsCharacterPage {
   character;
   idCharacter;
 
-  listFilmsName:any = [];
-  listPlanetsName:any = [];
-  listStarshipsName:any = [];
-  listVehiclesName:any = [];
-  listSpeciesName:any = [];
+  listFilmsName = [];
+  listPlanetsName = [];
+  listStarshipsName = [];
+  listVehiclesName = [];
+  listSpeciesName = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
     this.idCharacter = navParams.get('idCharacter');
@@ -35,28 +35,16 @@ export class DetailsCharacterPage {
     this.swapiProvider.getCharacter(this.idCharacter).subscribe(data => {
       this.character = data;
 
-      var monObjet: any = {};
+       function MonObjet(id, name){
+          this.id = id
+          this.name = name;
+       }
 
       /*  GetFilmsNames  */
       for (var index = 0; index < this.character.films.length; index++) {
         const idFilm = this.character.films[index].slice('https://swapi.co/api/films/'.length, -1);
         this.swapiProvider.getElementName("films", idFilm).subscribe(data => {
-          monObjet.id = idFilm;
-          monObjet.name = data['name']
-          this.listFilmsName[index] = monObjet;
-          console.log(this.listFilmsName[index].id,  this.listFilmsName[index].name)
-        });
-      }
-      /* End */
-
-      /*  GetHomeWorldNames  */
-      for (var index = 0; index < this.character.homeworld.length; index++) {
-        const idPlanet = this.character.homeworld[index].slice('https://swapi.co/api/planets/'.length, -1);
-        this.swapiProvider.getElementName("planets", idPlanet).subscribe(data => {
-          monObjet.id = idPlanet;
-          monObjet.name = data['name']
-          this.listPlanetsName[index] = monObjet;
-          console.log(this.listPlanetsName[index].id,  this.listPlanetsName[index].name)
+          this.listFilmsName.push(new MonObjet(idFilm, data['title']));
         });
       }
       /* End */
@@ -65,10 +53,7 @@ export class DetailsCharacterPage {
       for (var index = 0; index < this.character.starships.length; index++) {
         const idStarship = this.character.starships[index].slice('https://swapi.co/api/starships/'.length, -1);
         this.swapiProvider.getElementName("starships", idStarship).subscribe(data => {
-          monObjet.id = idStarship;
-          monObjet.name = data['name']
-          this.listStarshipsName[index] = monObjet;
-          console.log(this.listStarshipsName[index].id,  this.listStarshipsName[index].name)
+          this.listStarshipsName.push(new MonObjet(idStarship, data['name']));
         });
       }
       /* End */
@@ -77,10 +62,7 @@ export class DetailsCharacterPage {
       for (var index = 0; index < this.character.vehicles.length; index++) {
         const idVehicle = this.character.vehicles[index].slice('https://swapi.co/api/vehicles/'.length, -1);
         this.swapiProvider.getElementName("vehicles", idVehicle).subscribe(data => {
-          monObjet.id = idVehicle;
-          monObjet.name = data['name']
-          this.listVehiclesName[index] = monObjet;
-          console.log(this.listVehiclesName[index].id,  this.listVehiclesName[index].name)
+          this.listVehiclesName.push(new MonObjet(idVehicle, data['name']));
         });
       }
       /* End */
@@ -89,10 +71,7 @@ export class DetailsCharacterPage {
       for (var index = 0; index < this.character.species.length; index++) {
         const idSpecies = this.character.species[index].slice('https://swapi.co/api/species/'.length, -1);
         this.swapiProvider.getElementName("species", idSpecies).subscribe(data => {
-          monObjet.id = idSpecies;
-          monObjet.name = data['name']
-          this.listSpeciesName[index] = monObjet;
-          console.log(this.listSpeciesName[index].id,  this.listSpeciesName[index].name)
+          this.listSpeciesName.push(new MonObjet(idSpecies, data['name']));
         });
       }
       /* End */

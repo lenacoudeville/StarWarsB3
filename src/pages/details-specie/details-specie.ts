@@ -31,16 +31,16 @@ export class DetailsSpeciePage {
     this.swapiProvider.getSpecie(this.idSpecie).subscribe(data => {
       this.specie = data;
 
-      var monObjet: any = {};
+      function MonObjet(id, name){
+        this.id = id
+        this.name = name;
+     }
       
       /*  GetFilmsNames  */
       for (var index = 0; index < this.specie.films.length; index++) {
         const idFilm = this.specie.films[index].slice('https://swapi.co/api/films/'.length, -1);
         this.swapiProvider.getElementName("films", idFilm).subscribe(data => {
-          monObjet.id = idFilm;
-          monObjet.name = data['name']
-          this.listFilmsName[index] = monObjet;
-          console.log(this.listFilmsName[index].id,  this.listFilmsName[index].name)
+          this.listFilmsName.push(new MonObjet(idFilm, data['title']));
         });
       }
       /* End */
@@ -49,25 +49,10 @@ export class DetailsSpeciePage {
       for (var index = 0; index < this.specie.people.length; index++) {
         const idPeople = this.specie.people[index].slice('https://swapi.co/api/people/'.length, -1);
         this.swapiProvider.getElementName("people", idPeople).subscribe(data => {
-          monObjet.id = idPeople;
-          monObjet.name = data['name']
-          this.listPeoplesName[index] = monObjet;
-          console.log(this.listPeoplesName[index].id,  this.listPeoplesName[index].name)
+          this.listPeoplesName.push(new MonObjet(idPeople, data['name']));
         });
       }
       /* End */
-
-            /*  GetPlanetsNames  */
-            for (var index = 0; index < this.specie.homeworld.length; index++) {
-              const idPlanet = this.specie.homeworld[index].slice('https://swapi.co/api/planets/'.length, -1);
-              this.swapiProvider.getElementName("planets", idPlanet).subscribe(data => {
-                monObjet.id = idPlanet;
-                monObjet.name = data['name']
-                this.listPlanetsName[index] = monObjet;
-                console.log(this.listPlanetsName[index].id,  this.listPlanetsName[index].name)
-              });
-            }
-            /* End */
 
 
     });

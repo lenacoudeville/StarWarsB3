@@ -29,16 +29,16 @@ export class DetailsVehiclePage {
     this.swapiProvider.getVehicle(this.idVehicle).subscribe(data => {
       this.vehicle = data;
 
-      var monObjet: any = {};
+      function MonObjet(id, name){
+        this.id = id
+        this.name = name;
+     }
       
       /*  GetFilmsNames  */
       for (var index = 0; index < this.vehicle.films.length; index++) {
         const idFilm = this.vehicle.films[index].slice('https://swapi.co/api/films/'.length, -1);
         this.swapiProvider.getElementName("films", idFilm).subscribe(data => {
-          monObjet.id = idFilm;
-          monObjet.name = data['name']
-          this.listFilmsName[index] = monObjet;
-          console.log(this.listFilmsName[index].id,  this.listFilmsName[index].name)
+          this.listFilmsName.push(new MonObjet(idFilm, data['title']));
         });
       }
       /* End */
@@ -47,10 +47,7 @@ export class DetailsVehiclePage {
       for (var index = 0; index < this.vehicle.pilots.length; index++) {
         const idPeople = this.vehicle.pilots[index].slice('https://swapi.co/api/people/'.length, -1);
         this.swapiProvider.getElementName("people", idPeople).subscribe(data => {
-          monObjet.id = idPeople;
-          monObjet.name = data['name']
-          this.listPeoplesName[index] = monObjet;
-          console.log(this.listPeoplesName[index].id,  this.listPeoplesName[index].name)
+          this.listPeoplesName.push(new MonObjet(idPeople, data['name']));
         });
       }
       /* End */
