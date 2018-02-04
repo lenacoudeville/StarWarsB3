@@ -44,7 +44,7 @@ export class DetailsPlanetPage {
       /* End */
       
       /*  GetResidentNames  */
-      for (var index = 0; index < this.planet.residents.length; index++) {
+      for (index = 0; index < this.planet.residents.length; index++) {
         const idPeople = this.planet.residents[index].slice('https://swapi.co/api/people/'.length, -1);
         this.swapiProvider.getElementName("people", idPeople).subscribe(data => {
           this.listPeoplesName.push(new MonObjet(idPeople, data['name']));

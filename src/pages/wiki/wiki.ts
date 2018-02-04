@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SwapiProvider } from '../../providers/swapi/swapi';
 import { FilmsPage } from  '../films/films'
 import { CharactersPage } from '../characters/characters';
 
@@ -21,14 +20,11 @@ export class WikiPage {
 
 	wiki;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private swapiProvider: SwapiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WikiPage');
-    //this.swapiProvider.listFilms().subscribe(data => {
-    //this.wiki = data;
-    //});
    }
 
   filmsList() {

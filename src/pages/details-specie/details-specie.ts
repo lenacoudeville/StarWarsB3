@@ -5,7 +5,6 @@ import { SwapiProvider } from '../../providers/swapi/swapi';
 /* pages à importer */
 import { DetailsFilmPage } from '../details-film/details-film';
 import { DetailsCharacterPage } from '../details-character/details-character';
-import { DetailsPlanetPage } from '../details-planet/details-planet';
 /* end */
 
 @IonicPage()
@@ -46,7 +45,7 @@ export class DetailsSpeciePage {
       /* End */
       
       /*  GetCharacterNames  */
-      for (var index = 0; index < this.specie.people.length; index++) {
+      for (index = 0; index < this.specie.people.length; index++) {
         const idPeople = this.specie.people[index].slice('https://swapi.co/api/people/'.length, -1);
         this.swapiProvider.getElementName("people", idPeople).subscribe(data => {
           this.listPeoplesName.push(new MonObjet(idPeople, data['name']));

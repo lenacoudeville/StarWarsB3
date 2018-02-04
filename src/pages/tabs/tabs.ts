@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 import { AboutPage } from '../about/about';
 import { HomePage } from '../home/home';
 import { WikiPage } from '../wiki/wiki';
-import { FilmsPage } from '../films/films';
-import { CharactersPage } from '../characters/characters';
 
 @Component({
   templateUrl: 'tabs.html'

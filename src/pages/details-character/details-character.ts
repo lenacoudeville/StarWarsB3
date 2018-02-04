@@ -50,7 +50,7 @@ export class DetailsCharacterPage {
       /* End */
 
       /*  GetStarshipsNames  */
-      for (var index = 0; index < this.character.starships.length; index++) {
+      for (index = 0; index < this.character.starships.length; index++) {
         const idStarship = this.character.starships[index].slice('https://swapi.co/api/starships/'.length, -1);
         this.swapiProvider.getElementName("starships", idStarship).subscribe(data => {
           this.listStarshipsName.push(new MonObjet(idStarship, data['name']));
@@ -59,7 +59,7 @@ export class DetailsCharacterPage {
       /* End */
 
       /*  GetVehiclesNames  */
-      for (var index = 0; index < this.character.vehicles.length; index++) {
+      for (index = 0; index < this.character.vehicles.length; index++) {
         const idVehicle = this.character.vehicles[index].slice('https://swapi.co/api/vehicles/'.length, -1);
         this.swapiProvider.getElementName("vehicles", idVehicle).subscribe(data => {
           this.listVehiclesName.push(new MonObjet(idVehicle, data['name']));
@@ -68,7 +68,7 @@ export class DetailsCharacterPage {
       /* End */
 
       /*  GetSpeciesNames  */
-      for (var index = 0; index < this.character.species.length; index++) {
+      for (index = 0; index < this.character.species.length; index++) {
         const idSpecies = this.character.species[index].slice('https://swapi.co/api/species/'.length, -1);
         this.swapiProvider.getElementName("species", idSpecies).subscribe(data => {
           this.listSpeciesName.push(new MonObjet(idSpecies, data['name']));

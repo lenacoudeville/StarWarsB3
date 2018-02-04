@@ -50,7 +50,7 @@ export class DetailsFilmPage {
       /* End */
 
       /*  GetPlanetsNames  */
-      for (var index = 0; index < this.film.planets.length; index++) {
+      for (index = 0; index < this.film.planets.length; index++) {
         const idPlanet = this.film.planets[index].slice('https://swapi.co/api/planets/'.length, -1);
         this.swapiProvider.getElementName("planets", idPlanet).subscribe(data => {
           this.listPlanetsName.push(new MonObjet(idPlanet, data['name']));
@@ -59,7 +59,7 @@ export class DetailsFilmPage {
       /* End */
 
       /*  GetStarshipsNames  */
-      for (var index = 0; index < this.film.starships.length; index++) {
+      for (index = 0; index < this.film.starships.length; index++) {
         const idStarship = this.film.starships[index].slice('https://swapi.co/api/starships/'.length, -1);
         this.swapiProvider.getElementName("starships", idStarship).subscribe(data => {
           this.listStarshipsName.push(new MonObjet(idStarship, data['name']));
@@ -68,7 +68,7 @@ export class DetailsFilmPage {
       /* End */
 
       /*  GetVehiclesNames  */
-      for (var index = 0; index < this.film.vehicles.length; index++) {
+      for (index = 0; index < this.film.vehicles.length; index++) {
         const idVehicle = this.film.vehicles[index].slice('https://swapi.co/api/vehicles/'.length, -1);
         this.swapiProvider.getElementName("vehicles", idVehicle).subscribe(data => {
           this.listVehiclesName.push(new MonObjet(idVehicle, data['name']));
@@ -77,7 +77,7 @@ export class DetailsFilmPage {
       /* End */
 
       /*  GetSpeciesNames  */
-      for (var index = 0; index < this.film.species.length; index++) {
+      for (index = 0; index < this.film.species.length; index++) {
         const idSpecies = this.film.species[index].slice('https://swapi.co/api/species/'.length, -1);
         this.swapiProvider.getElementName("species", idSpecies).subscribe(data => {
           this.listSpeciesName.push(new MonObjet(idSpecies, data['name']));

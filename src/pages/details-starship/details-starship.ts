@@ -44,7 +44,7 @@ export class DetailsStarshipPage {
       /* End */
       
       /*  GetPilotsNames  */
-      for (var index = 0; index < this.starship.pilots.length; index++) {
+      for (index = 0; index < this.starship.pilots.length; index++) {
         const idPeople = this.starship.pilots[index].slice('https://swapi.co/api/people/'.length, -1);
         this.swapiProvider.getElementName("people", idPeople).subscribe(data => {
           this.listPeoplesName.push(new MonObjet(idPeople, data['name']));
