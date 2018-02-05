@@ -1,0 +1,17 @@
+<ion-header>
+        
+          <ion-navbar>
+            <ion-title>Vehicles List</ion-title>
+          </ion-navbar>
+        
+        </ion-header>
+        
+        
+        <ion-content padding>
+            <ion-list>
+                <button ion-item *ngFor="let vehicle of vehicles" (click)="vehicleSelected(vehicle)">
+                  {{ vehicle.name }}
+                </button>  
+              </ion-list>
+        
+        </ion-content>

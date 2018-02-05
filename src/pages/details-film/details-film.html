@@ -1,3 +1,7 @@
+
+ <script type="text/javascript" src="assets/scripts/scripts.js"></script>
+ <link rel="stylesheet" href="assets/css/details.css" type="text/css" media="screen" /> 
+
 <ion-header>
     
       <ion-navbar>
@@ -15,9 +19,38 @@
             <ion-item>Opening crawl : {{film?.opening_crawl}}</ion-item>
           </ion-list>
 
-        <ion-list title="Related Characters">
-            <button ion-item *ngFor="let char of film?.characters">
-                {{ char }}
+        <h4 >Related Characters <button ion-button small round color="light" onclick="toggle('people')">Show/Hide</button></h4>
+        <ion-list id="people">            
+            <button ion-item *ngFor="let people of listPeoplesName" (click)=characterSelected(people?.id)>
+               {{ people?.name }} 
+            </button>
+        </ion-list>
+
+        <h4>Related Planets</h4>
+        <ion-list id="planets">            
+            <button ion-item *ngFor="let planet of listPlanetsName" (click)=planetSelected(planet?.id)>
+                {{ planet?.name }}
+            </button>
+        </ion-list>
+
+        <h4>Related Starships</h4>
+        <ion-list id="starships">            
+            <button ion-item *ngFor="let starship of listStarshipsName" (click)=starshipSelected(starship?.id)>
+                {{ starship?.name }}
+            </button>
+        </ion-list>
+
+        <h4>Related Vehicles</h4>
+        <ion-list id="vehicles">            
+            <button ion-item *ngFor="let vehicle of listVehiclesName" (click)=vehicleSelected(vehicle?.id)>
+                {{ vehicle?.name }}
+            </button>
+        </ion-list>
+
+        <h4>Related Species</h4>
+        <ion-list id="species">            
+            <button ion-item *ngFor="let species of listSpeciesName" (click)=specieSelected(species?.id)>
+                {{ species?.name }}
             </button>
         </ion-list>
     </ion-content>

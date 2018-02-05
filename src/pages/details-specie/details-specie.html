@@ -1,0 +1,31 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>{{specie?.name}}</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+        <ion-list>
+            <ion-item>Classification : {{specie?.classification}}</ion-item>
+            <ion-item>Designation: {{specie?.designation}}</ion-item>
+        </ion-list>
+
+        <h4>Related Films</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let film of listFilmsName" (click)=filmSelected(film?.id)>
+               {{ film?.name }} 
+            </button>
+        </ion-list>
+
+        <h4>Related Characters</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let people of listPeoplesName" (click)=characterSelected(people?.id)>
+               {{ people?.name }} 
+            </button>
+        </ion-list>
+
+    </ion-content>
+    

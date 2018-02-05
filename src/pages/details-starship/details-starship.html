@@ -1,0 +1,32 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>{{starship?.name}}</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+        <ion-list>
+            <ion-item>Model : {{starship?.model}}</ion-item>
+            <ion-item>manufacturer: {{starship?.manufacturer}}</ion-item>
+        </ion-list>
+
+        <h4>Pilots</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let people of listPeoplesName" (click)=characterSelected(people?.id)>
+               {{ people?.name }} 
+            </button>
+        </ion-list>
+
+
+        <h4>Related Films</h4>
+        <ion-list>            
+            <button ion-item *ngFor="let film of listFilmsName" (click)=filmSelected(film?.id)>
+               {{ film?.name }} 
+            </button>
+        </ion-list>
+
+    </ion-content>
+    

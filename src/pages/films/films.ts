@@ -18,12 +18,11 @@ export class FilmsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilmPage');
     this.swapiProvider.listFilms().subscribe(data => {
-    this.films = data;
+      this.films = data;
     });
    }
 
-   filmSelected(film) {
-    
+   filmSelected(film) {    
     const idFilm = film.url.slice('https://swapi.co/api/films/'.length, -1);
     this.navCtrl.push(DetailsFilmPage, { idFilm: idFilm});
   }

@@ -1,9 +1,4 @@
-<!--
-  Generated template for the WikiPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -15,6 +10,11 @@
 
 <ion-content padding>
     <ion-list>
-      
+      <button ion-item  (click)="filmsList()"><img title="Films" alt="Films" src='assets/imgs/films.png'></button>
+      <button ion-item  (click)="charactersList()"><img alt="Personnages" src='assets/imgs/personnage.jpg'></button>
+      <button ion-item  (click)="planetsList()"><img alt="Planètes" src='assets/imgs/planete.jpg'></button>
+      <button ion-item  (click)="speciesList()"><img alt="Espèces" src='assets/imgs/race.jpg'></button>
+      <button ion-item  (click)="starshipsList()"><img alt="Vaisseaux" src='assets/imgs/vaisseau.png'></button>
+      <button ion-item  (click)="vehiclesList()"><img alt="Vehicules"src='assets/imgs/vehicule.jpg'></button>
     </ion-list>
 </ion-content>
