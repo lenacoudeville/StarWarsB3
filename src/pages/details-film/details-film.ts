@@ -38,7 +38,7 @@ export class DetailsFilmPage {
       function MonObjet(id, name){
         this.id = id
         this.name = name;
-     }
+     } 
       
       /*  GetCharacterNames  */
       for (var index = 0; index < this.film.characters.length; index++) {
